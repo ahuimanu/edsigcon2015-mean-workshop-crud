@@ -913,7 +913,36 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 </section>
 ```
 
+---
+
 #15.2 (List/Read)
+
+`list-articles.client.view.html`
+
+```HTML
+<!-- The list articles view -->
+<section data-ng-controller="ArticlesController" data-ng-init="find()">
+	<h1>Articles</h1>
+	<ul>
+		<!-- The list of article -->
+		<li data-ng-repeat="article in articles">
+			<a data-ng-href="#!/articles/{{article._id}}" data-ng-bind="article.title"></a>
+			<br>
+			<small data-ng-bind="article.created | date:'medium'"></small>
+			<small>/</small>
+			<small data-ng-bind="article.creator.fullName"></small>
+			<p data-ng-bind="article.content"></p>
+		</li>
+	</ul>
+	<!-- If there are no articles in the list, suggest the user's create a new article -->
+	<div data-ng-hide="!articles || articles.length">
+		No articles yet, why don't you <a href="/#!/articles/create">create one</a>?
+	</div>
+</section>
+```
+---
+
+#15.3 (Update)
 
 `edit-article.client.view.html`
 
@@ -947,6 +976,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 </section>
 ```
 
+---
 
 #16. AngularJS Routes (public/config)
 
