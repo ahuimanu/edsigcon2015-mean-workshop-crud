@@ -592,6 +592,8 @@ exports.requiresLogin = function(req, res, next) {
 
 # 8. Express Routes (app/routes)
 
+##8.1 Articles Routes
+
 `articles.server.routes.js`
 
 ```JavaScript
@@ -617,6 +619,92 @@ module.exports = function(app) {
 
 	// Set up the 'articleId' parameter middleware   
 	app.param('articleId', articles.articleByID);
+};
+```
+
+---
+
+##8.2 Index Routes
+
+`index.server.routes.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Define the routes module' method
+module.exports = function(app) {
+	// Load the 'index' controller
+	var index = require('../controllers/index.server.controller');
+
+	// Mount the 'index' controller's 'render' method
+	app.get('/', index.render);
+};
+```
+
+---
+
+##8.3
+
+`users.server.routes.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Load the module dependencies
+var users = require('../../app/controllers/users.server.controller'),
+	passport = require('passport');
+
+// Define the routes module' method
+module.exports = function(app) {
+	// Set up the 'signup' routes 
+	app.route('/signup')
+	   .get(users.renderSignup)
+	   .post(users.signup);
+
+	// Set up the 'signin' routes 
+	app.route('/signin')
+	   .get(users.renderSignin)
+	   .post(passport.authenticate('local', {
+			successRedirect: '/',
+			failureRedirect: '/signin',
+			failureFlash: true
+	   }));
+
+	// Set up the Facebook OAuth routes 
+	app.get('/oauth/facebook', passport.authenticate('facebook', {
+		failureRedirect: '/signin'
+	}));
+	app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
+		failureRedirect: '/signin',
+		successRedirect: '/'
+	}));
+
+	// Set up the Twitter OAuth routes 
+	app.get('/oauth/twitter', passport.authenticate('twitter', {
+		failureRedirect: '/signin'
+	}));
+	app.get('/oauth/twitter/callback', passport.authenticate('twitter', {
+		failureRedirect: '/signin',
+		successRedirect: '/'
+	}));
+
+	// Set up the Google OAuth routes 
+	app.get('/oauth/google', passport.authenticate('google', {
+		scope: [
+			'https://www.googleapis.com/auth/userinfo.profile',
+			'https://www.googleapis.com/auth/userinfo.email'
+		],
+		failureRedirect: '/signin'
+	}));
+	app.get('/oauth/google/callback', passport.authenticate('google', {
+		failureRedirect: '/signin',
+		successRedirect: '/'
+	}));
+
+	// Set up the 'signout' route
+	app.get('/signout', users.signout);
 };
 ```
 
