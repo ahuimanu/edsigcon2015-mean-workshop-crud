@@ -577,7 +577,27 @@ exports.hasAuthorization = function(req, res, next) {
 
 ---
 
-## 7.2 User Controller (app/controllers)
+## 7.2 Index Controller (app/controllers)
+
+`index.server.controller.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Create a new 'render' controller method
+exports.render = function(req, res) {
+	// Use the 'response' object to render the 'index' view with a 'title' and a stringified 'user' properties
+	res.render('index', {
+		title: 'Hello World',
+		user: JSON.stringify(req.user)
+	});
+};
+```
+
+---
+
+## 7.3 User Controller (app/controllers)
 
 `users.server.controller.js`
 
