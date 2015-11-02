@@ -277,7 +277,7 @@ module.exports = function() {
 
 ## 7.1 Article Controller
 
-`index.article.controller.js`
+`articles.server.controller.js`
 
 Wherein we **CRUD**
 
