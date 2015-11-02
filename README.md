@@ -42,6 +42,10 @@ Next, type `npm install` in the console
 
 #2 - bower.json
 
+First, ensure bower is installed:
+
+`npm install -g bower`
+
 ```JavaScript
 {
 	"name": "MEAN-CRUD",
@@ -119,7 +123,7 @@ mongoose.model('Article', ArticleSchema);
 
 # 5. Let's add a User Mongoose Model too (app/models)
 
-`article.server.model.js`
+`user.server.model.js`
 
 ```JavaScript
 // Invoke 'strict' JavaScript mode
