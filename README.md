@@ -68,6 +68,14 @@ Next, type `bower install` in the console.
 
 ---
 
+##3.1 Gitignore (if using Git, ignore the data directory)
+
+`.gitignore`
+
+```JavaScript
+data/
+```
+
 # 4. Article Mongoose Model - in app/models
 
 `article.server.model.js`
