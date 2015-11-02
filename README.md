@@ -275,7 +275,7 @@ module.exports = function() {
 
 ---
 
-##Configure Express (app/config)
+## 6.2 Configure Express (app/config)
 
 `express.js`
 
@@ -378,10 +378,10 @@ module.exports = function() {
 	});
 
 	// Load Passport's strategies configuration files
-	require('./strategies/local.js')();
-	require('./strategies/twitter.js')();
-	require('./strategies/facebook.js')();
-	require('./strategies/google.js')();
+	//require('./strategies/local.js')();
+	//require('./strategies/twitter.js')();
+	//require('./strategies/facebook.js')();
+	//require('./strategies/google.js')();
 };
 ```
 
