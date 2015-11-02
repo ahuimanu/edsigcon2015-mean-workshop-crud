@@ -36,6 +36,8 @@ chmod a+x mongod
 }
 ```
 
+Next, type `npm install` in the console
+
 ---
 
 #2 - bower.json
@@ -62,9 +64,11 @@ chmod a+x mongod
 }
 ```
 
+Next, type `bower install` in the console.
+
 ---
 
-#Article Mongoose Model - in app/models
+# 4. Article Mongoose Model - in app/models
 
 `article.server.model.js`
 
