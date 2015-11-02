@@ -877,3 +877,101 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
     }
 ]);
 ```
+
+#15. AngularJS Views (public/views)
+
+##15.1 (Create)
+
+`create-article.client.view.html`
+
+```HTML
+<!-- The create article view -->
+<section data-ng-controller="ArticlesController">
+	<h1>New Article</h1>
+	<!-- The new article form -->
+	<form data-ng-submit="create()" novalidate>
+		<div>
+			<label for="title">Title</label>
+			<div>
+				<input type="text" data-ng-model="title" id="title" placeholder="Title" required>
+			</div>
+		</div>
+		<div>
+			<label for="content">Content</label>
+			<div>
+				<textarea data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+			</div>
+		</div>
+		<div>
+			<input type="submit">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+</section>
+```
+
+#15.2 (List/Read)
+
+`edit-article.client.view.html`
+
+```HTML
+<!-- The edit article view -->
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+	<h1>Edit Article</h1>
+	<!-- The edited article form -->
+	<form data-ng-submit="update()" novalidate>
+		<div>
+			<label for="title">Title</label>
+			<div>
+				<input type="text" data-ng-model="article.title" id="title" placeholder="Title" required>
+			</div>
+		</div>
+		<div>
+			<label for="content">Content</label>
+			<div>
+				<textarea data-ng-model="article.content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+			</div>
+		</div>
+		<div>
+			<input type="submit" value="Update">
+		</div>
+		<!-- The error message element -->
+		<div data-ng-show="error">
+			<strong data-ng-bind="error"></strong>
+		</div>
+	</form>
+	</div>
+</section>
+```
+
+
+#16. AngularJS Routes (public/config)
+
+`articles.client.routes.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Configure the 'articles' module routes
+angular.module('articles').config(['$routeProvider',
+	function($routeProvider) {
+		$routeProvider.
+		when('/articles', {
+			templateUrl: 'articles/views/list-articles.client.view.html'
+		}).
+		when('/articles/create', {
+			templateUrl: 'articles/views/create-article.client.view.html'
+		}).
+		when('/articles/:articleId', {
+			templateUrl: 'articles/views/view-article.client.view.html'
+		}).
+		when('/articles/:articleId/edit', {
+			templateUrl: 'articles/views/edit-article.client.view.html'
+		});
+	}
+]); 
+```
