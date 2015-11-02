@@ -1,13 +1,20 @@
 {
-  "name": "chat-example",
-  "version": "0.0.0",
-  "description": "A chat example to showcase how to use `socket.io` with a static `express` server with `async` for control flow.",
-  "main": "server.js",
-  "repository": "",
-  "author": "Mostafa Eweda <mo.eweda@gmail.com>",
-  "dependencies": {
-    "async": "~0.2.8",
-    "express": "~3.2.4",
-    "socket.io": "~0.9.14"
-  }
+	"name": "MEAN-CRUD",
+	"version": "0.0.8",
+	"dependencies": {
+		"express": "~4.13.3",
+		"morgan": "~1.6.1",
+		"compression": "~1.6.0",
+		"body-parser": "~1.14.1",
+		"method-override": "~2.3.5",
+		"express-session": "~1.11.3",
+		"ejs": "~2.3.4",
+		"connect-flash": "~0.1.1",
+		"mongoose": "~4.1.10",
+		"passport": "~0.3.0",
+		"passport-local": "~1.0.0",
+		"passport-facebook": "~2.0.0",
+		"passport-twitter": "~1.0.3",
+		"passport-google-oauth": "~0.2.0"
+	}
 }
