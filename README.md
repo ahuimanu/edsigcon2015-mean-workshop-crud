@@ -387,7 +387,7 @@ module.exports = function() {
 
 ---
 
-#6.5 Configure Development Environment (config/env)
+##6.4 Configure Development Environment (config/env)
 
 `development.js`
 
@@ -419,7 +419,7 @@ module.exports = {
 
 ---
 
-##6.4 Configure Overall (app/config)
+##6.5 Configure Overall (app/config)
 
 `config.js`
 
