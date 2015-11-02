@@ -679,6 +679,8 @@ module.exports = function() {
 };
 ```
 
+---
+
 # 10. Setup Server-Side EJS Template (app/views)
 
 `index.ejs`
@@ -724,3 +726,19 @@ module.exports = function() {
 </body>
 </html>
 ```
+
+---
+
+#11. AngularJS - Module (public/articles)
+
+`articles.client.modules.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Create the 'articles' module
+angular.module('articles', []);
+```
+
+---
