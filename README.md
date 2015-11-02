@@ -1045,6 +1045,12 @@ module.exports = app;
 
 ---
 
+##11.1 Run the Server
+
+At this stage you could run the server: `node server.js`
+
+---
+
 #12. AngularJS - Module (public/articles)
 
 `articles.client.modules.js`
