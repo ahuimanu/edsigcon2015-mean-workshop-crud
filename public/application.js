@@ -15,7 +15,7 @@ mainApplicationModule.config(['$locationProvider',
 ]);
 
 // Fix Facebook's OAuth bug
-if (window.location.hash === '#_=_') window.location.hash = '#!';
+//if (window.location.hash === '#_=_') window.location.hash = '#!';
 
 // Manually bootstrap the AngularJS application
 angular.element(document).ready(function() {

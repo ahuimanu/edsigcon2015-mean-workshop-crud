@@ -1352,3 +1352,22 @@ angular.module('articles').config(['$routeProvider',
 	}
 ]); 
 ```
+
+---
+
+#18. Users Module (public/users)
+
+##18.1 Users Module (pulic/users)
+
+`users.client.module.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Create the 'users' module
+angular.module('users', []);
+```
+
+---
+
