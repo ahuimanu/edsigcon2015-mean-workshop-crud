@@ -915,7 +915,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 
 ---
 
-#15.2 (List/Read)
+##15.2 (List/Read)
 
 `list-articles.client.view.html`
 
@@ -942,7 +942,32 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 ```
 ---
 
-#15.3 (Update)
+##15.3 (View)
+
+`view-article.client.view.html`
+
+```HTML
+<!-- The article view -->
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+    <h1 data-ng-bind="article.title"></h1>
+    <!-- Show the editing buttons to the article creator -->
+    <div data-ng-show="authentication.user._id == article.creator._id">
+        <a href="/#!/articles/{{article._id}}/edit">edit</a>
+        <a href="#" data-ng-click="delete();">delete</a>
+    </div>
+    <small>
+        <em>Posted on</em>
+        <em data-ng-bind="article.created | date:'mediumDate'"></em>
+        <em>by</em>
+        <em data-ng-bind="article.creator.fullName"></em>
+    </small>
+    <p data-ng-bind="article.content"></p>
+</section>
+```
+
+---
+
+##15.4 (Update)
 
 `edit-article.client.view.html`
 
