@@ -592,7 +592,7 @@ exports.requiresLogin = function(req, res, next) {
 
 # 8. Express Routes (app/routes)
 
-##8.1 Articles Routes
+##8.1 Articles Routes (app/routes)
 
 `articles.server.routes.js`
 
@@ -624,7 +624,7 @@ module.exports = function(app) {
 
 ---
 
-##8.2 Index Routes
+##8.2 Index Routes (app/routes)
 
 `index.server.routes.js`
 
@@ -644,7 +644,7 @@ module.exports = function(app) {
 
 ---
 
-##8.3
+##8.3 Users Routes (app/routes)
 
 `users.server.routes.js`
 
