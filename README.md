@@ -275,7 +275,7 @@ module.exports = function() {
 
 # 7. Configure Express Controllers
 
-## 7.1 Article Controller
+## 7.1 Article Controller (app/controllers)
 
 `articles.server.controller.js`
 
@@ -416,7 +416,7 @@ exports.hasAuthorization = function(req, res, next) {
 
 ---
 
-## 7.2 User Controller
+## 7.2 User Controller (app/controllers)
 
 `users.server.controller.js`
 
