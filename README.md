@@ -739,9 +739,44 @@ module.exports = function() {
 </html>
 ```
 
+#11. NodeJS Server File 
+
+`server.js`
+
+```JavaScript
+// Invoke 'strict' JavaScript mode
+'use strict';
+
+// Set the 'NODE_ENV' variable
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+// Load the module dependencies
+var mongoose = require('./config/mongoose'),
+  express = require('./config/express'),
+  passport = require('./config/passport');
+
+// Create a new Mongoose connection instance
+var db = mongoose();
+
+// Create a new Express application instance
+var app = express();
+
+// Configure the Passport middleware
+var passport = passport();
+
+// Use the Express application instance to listen to the C9 preferred port
+app.listen(process.env.PORT);
+
+// Log the server status to the console
+console.log('Server running at http://localhost:' + process.env.PORT + '/');
+
+// Use the module.exports property to expose our Express application instance for external usage
+module.exports = app;
+```
+
 ---
 
-#11. AngularJS - Module (public/articles)
+#12. AngularJS - Module (public/articles)
 
 `articles.client.modules.js`
 
@@ -755,7 +790,7 @@ angular.module('articles', []);
 
 ---
 
-#12. AngularJS - Application (public)
+#13. AngularJS - Application (public)
 
 `application.js`
 
@@ -785,7 +820,7 @@ angular.element(document).ready(function() {
 });
 ```
 
-#13. AngularJS - Service Module to consume HTTP Endpoints (public/services)
+#14. AngularJS - Service Module to consume HTTP Endpoints (public/services)
 
 `articles.client.service.js`
 
@@ -808,7 +843,7 @@ angular.module('articles').factory('Articles', ['$resource', function($resource)
 
 ---
 
-#14. AngularJS - Controller Module (public/controllers)
+#15. AngularJS - Controller Module (public/controllers)
 
 `articles.client.controller.js`
 
@@ -890,9 +925,9 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 ]);
 ```
 
-#15. AngularJS Views (public/views)
+#16. AngularJS Views (public/views)
 
-##15.1 (Create)
+##16.1 (Create)
 
 `create-article.client.view.html`
 
@@ -927,7 +962,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 
 ---
 
-##15.2 (List/Read)
+##16.2 (List/Read)
 
 `list-articles.client.view.html`
 
@@ -954,7 +989,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 ```
 ---
 
-##15.3 (View)
+##16.3 (View)
 
 `view-article.client.view.html`
 
@@ -979,7 +1014,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 
 ---
 
-##15.4 (Update)
+##16.4 (Update)
 
 `edit-article.client.view.html`
 
@@ -1015,7 +1050,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$routePa
 
 ---
 
-#16. AngularJS Routes (public/config)
+#17. AngularJS Routes (public/config)
 
 `articles.client.routes.js`
 
