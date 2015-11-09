@@ -9,6 +9,10 @@ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
 chmod a+x mongod
 ```
 
+If you are making a script for this, then you also need to run the following on that script:
+
+`chmod a+x mongod`
+
 ---
 
 # 1 - package.json
